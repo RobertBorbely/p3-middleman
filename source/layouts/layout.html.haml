@@ -1,0 +1,10 @@
+!!!
+%html{ lang: "en" }
+  %head
+    = partial "partials/head_contents"
+  %body
+    %main
+      =partial "partials/main_navigation" 
+      = yield
+      =partial "partials/main_footer"
+    =partial "partials/mobile_menu"

@@ -1,0 +1,84 @@
+de:
+  paths:
+    home: 'startseite'
+    about: 'uber_mich' 
+    contact: 'kontakt' 
+    gallery: 'galerie'
+    gallery_photos: 'fotos'
+    impressum: 'impressum'
+    subscribe: 'subscribe'
+  menu:
+    home: 'Startseite'
+    about_me: 'Über mich'
+    gallery: 'Galerie'
+    past_work: 'Past Work' 
+    contact_me: 'Kontakt' 
+    faq: 'FAQ'
+    terms_of_service: 'Terms of Service'
+    privacy_policy: 'AGB' 
+    impress: 'Impressum' 
+  copyright: 'Copyright P3 designed and created by RailsIC'
+  home: 
+    title: "Hi! Ich bin Peter Kuchler III." 
+    subtitle: 'Glasmeister, Künstler'
+    video_button: 'Video!' 
+  about: 
+    main-title: 'Über mich' 
+    p1: 'Ich schlafe unruhig. In meinem Kopf entstehen neue Visionen der Glaskunst. Endlich 6 Uhr – ab ins eigene Glasstudio, Vorbereitungen treffen. Kühlofen aktivieren und die Wärmeturbine auf 1300 Grad erhitzen. Nun ist etwas Zeit, meine Visionen auf Papier zu bringen. Form und Farbgebung werden entschieden. 8 Uhr, meine Assistenten treffen ein. Endlich geht´s los. Die glühende Glasmacherpfeife berührt das flüssige Glas. Ein neues Lichtobjekt entsteht.'
+    p2: 'Aufgewachsen im Glas hat mich dieses Medium immer schon begleitet. Mit jungen 15 Jahren nahm ich sofort die Gelegenheit wahr, mich professionell mit Heißglas zu beschäftigen. Ich erkannte schnell die Gabe in mir, und konzentrierte mich auf dieses Talent. Dadurch waren die Fortschritte rasant. Die Voraussetzungen für meine Entwicklung waren im eigenen Glasstudio perfekt. Danke an meine Familie, die es mir ermöglicht hat die weltbesten Glasbläser zu treffen, mit Ihnen zu arbeiten und mir die Zeit gaben zu wachsen. (Mittlerweile bin ich schon zwei Meter groß.)'  
+    secondary-title: 'Die Vision – Lichtobjekte:'
+    p3: 'Glas lebt durch Licht. Jede Nuance der Farbe wird durch das Licht intensiviert. Ich liebe das Strahlen meiner Lichtobjekte und die Freude, welche sie in die Augen zaubern. Das schönste Gefühl für mich ist, wenn Leute nach Hause kommen mein Lichtobjekt einschalten und sich für ein paar Sekunden darin verlieren.'
+  impress:
+    main-title: 'Impressum'
+    h2: 'Firmenwortlaut'
+    p1: 'Kuchlerhaus GmbH'
+    p2: 'Geschäftsführer: Peter Kuchler'
+    p3: 'Pottendorfer Straße 24-28'
+    p4: '2483 Ebreichsdorf-Weigelsdorf'
+    p5: 'UID-Nr: ATU 65164314'
+    p6: 'FN: 331822Z'
+    p7: 'HG Wiener Neustadt'
+  contact_me:
+    desc: 'Anfragen sind willkommen!'
+    submit_button: 'Nachricht senden' 
+    success_notice: 'Danke für die Nachricht. Ich melde mich in Kürze.' 
+
+  gallery:
+    btn: 'Ins Detail!'
+
+  ingredients: 'Bestandteile: '
+  activerecord:
+    attributes:
+      contact:
+        name: 'Name'
+        email: 'Email'
+        phone_number: 'Telefon'
+        text: 'Nachricht'
+  placeholder:
+    contact:
+      name: 'Name'
+      email: 'Email'
+      phone_number: 'Telefon'
+      text: 'Nachricht'
+
+        #- Név nem lehet üres -  Name can’t be blank. Name darf nicht fehlen.
+        #- Email nem lehet üres - Email can’t be blank. Email darf nicht fehlen.
+        #- Phone number nem lehet üres - Phone Number can’t be blank. Telefon darf nicht fehlen.
+        #- Üzenet nem lehet üres - Message can’t be blank. Nachricht darf nicht fehlen.
+  # Kaminari pagination localization
+  views:
+    pagination:
+      first: "&laquo; Zuerst"
+      last: "Letzte &raquo;"
+      previous: "&lsaquo; Zurück"
+      next: "Nächster &rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No %{entry_name} found"
+          one: "Displaying <b>1</b> %{entry_name}"
+          other: "Displaying <b>all %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"

@@ -1,0 +1,43 @@
+.about, .impressum {
+  @include outer-container($small-container);
+  text-align: center;
+
+  .text-container {
+    margin-bottom: 100px;
+    font-size: 16px;
+
+    @include media(max-width 768px) {
+      padding: 0 40px;
+    }
+
+    @include media(max-width 480px) {
+      padding: 0 15px;
+    }
+
+    .page-main-title {
+      @include main-title;
+      font-size: 2.5em;
+      margin-bottom: 0;
+
+      @include media(max-width $medium-screen) {
+        font-size: 2em;
+        padding: 0 40px;
+      }
+    }
+
+    .page-secondary-title {
+      @include second-title;
+      font-weight: 600;
+      font-size: 2.25em;
+    }
+
+    p {
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}

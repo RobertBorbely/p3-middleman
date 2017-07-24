@@ -1,0 +1,47 @@
+.home-footer {
+  @include clearfix;
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  padding: 0 40px 20px 40px;
+  width: 100%;
+  display: block;
+
+  .language-container {
+    float: left;
+    font-weight: 700;
+    font-size: 0.75em;
+    display: none;
+
+    @include media($medium-screen) {
+      display: block;
+    }
+
+  }
+
+  .social-container {
+    float: right; 
+    opacity: 0.7;
+    display: none;
+
+    @include media($medium-screen) {
+      display: block;
+    }
+
+    a {
+      margin: 0 10px;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

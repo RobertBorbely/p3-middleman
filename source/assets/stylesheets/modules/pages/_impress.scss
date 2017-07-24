@@ -1,0 +1,19 @@
+.impressum {
+  height: inherit;
+  width: 100vw;
+
+  @include media(480px) {
+   height: calc(100vh - 210px);
+  }
+  .text-container {
+    .page-main-title {
+      @include media(max-width 480px) {
+        font-size: 2.5em;
+      }
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+}

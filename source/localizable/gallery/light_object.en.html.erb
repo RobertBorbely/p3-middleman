@@ -1,0 +1,20 @@
+---
+pagination:
+  for: light_object_photos
+  per_page: 10
+---
+<%- current_sym = :light_object
+  galleries = data.site.galleries.map{|name| {sym: name, data: data.send("#{name.to_s}_gallery")} }
+  current_gallery = galleries.select{|item| item[:sym] == current_sym }.first %>
+
+<div class="gallery-list">
+  <%= partial "partials/gallery_links", locals: { galleries: galleries, current: current_sym } %>
+
+  <div class="small_container">
+    <%= binding.pry; %> 
+    <div class="gallery-contaier">
+    
+    </div>
+  </div>
+</div>
+  

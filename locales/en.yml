@@ -1,0 +1,79 @@
+en:
+  paths:
+    home: 'home'
+    about: 'about'
+    contact: 'contact'
+    gallery: 'gallery'
+    gallery_photos: 'photos'
+    impressum: 'Impressum'
+    subscribe: 'Subscribe'
+  menu:
+    home: 'Home'
+    about_me: 'About Me'
+    gallery: 'Gallery'
+    past_work: 'Past Work'
+    contact_me: 'Contact Me'
+    faq: 'FAQ'
+    terms_of_service: 'Terms of Service'
+    privacy_policy: 'Privacy Policy'
+    impress: 'Impressum'
+  copyright: 'Copyright P3 designed and created by RailsIC'
+  home: 
+    title: "Hi, I'm Peter Kuchler III."
+    subtitle: 'Glasswork Master, Artist'
+    video_button: 'Watch the video!'
+  about: 
+    main-title: 'About me'
+    p1: 'I wake up off and on. New visions of glass art appear in my head. Finally it is 6 am, on my way to my own glass studio; everything has to be arranged. The cooling furnace starts and the heat turbine heats up to 1,300 degrees. Now I have some time to put my visions on paper. I decide about the form and the colouring. At 8 am my assistants arrive. Finally we start the work. The red-hot glass producing pipe touches the fluid glass. A new light object is born.'
+    p2: 'Glass accompanied me my whole life. As a 15-years old youngster I grasped the opportunity to deal professionally with hot glass. I realized my talents early and I focused on my gifts. This way I could proceed fast. Everything was given for my development in my own glass studio. I am thankful to my family that they enabled me to meet the best glass blowers in the word, to work with them and let me grew up (In the meantime I am already 2 meters tall.)'
+    secondary-title: 'The vision – light objects:'
+    p3: 'Glass lives through light. Every shade of the colours is made more intense by the light. I like the glare of my light objects and the joy that these objects cause in the eyes. The best feeling for me is when people turn on my light object when they arrive home and they get lost in them for a few seconds.'
+  contact_me:
+    desc: 'Inquiries are welcome!'
+    submit_button: 'Send me a message'
+    success_notice: 'Thank you for the message. I will answer soon.'
+  gallery:
+    btn: 'Take a closer look!'
+
+  ingredients: 'Ingredients: '
+  impress:
+    main-title: 'Impressum'
+    h2: 'Companyname'
+    p1: 'Kuchlerhaus GmbH'
+    p2: 'Geschäftsführer: Peter Kuchler'
+    p3: 'Pottendorfer Straße 24-28'
+    p4: '2483 Ebreichsdorf-Weigelsdorf'
+    p5: 'UID-Nr: ATU 65164314'
+    p6: 'FN: 331822Z'
+    p7: 'HG Wiener Neustadt'
+
+  activerecord:
+    attributes:
+      contact:
+        name: 'Name'
+        email: 'Email'
+        phone_number: 'Phone Number'
+        text: 'Message'
+  placeholder:
+    contact:
+      name: 'Name'
+      email: 'Email'
+      phone_number: 'Phone Number'
+      text: 'Message'
+   # Kaminari pagination localization     
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No %{entry_name} found"
+          one: "Displaying <b>1</b> %{entry_name}"
+          other: "Displaying <b>all %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"

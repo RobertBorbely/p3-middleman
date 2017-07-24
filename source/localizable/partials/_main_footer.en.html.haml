@@ -1,0 +1,11 @@
+%footer.main-footer
+  .language-container
+    = link_to 'EN', '/en'# localized_path(current_page.path, :de, :en)
+    |
+    = link_to 'DE', '/'  # localized_path(current_page.path, :en, :de) 
+  .footer-menu
+    %ul
+      %li=link_to I18n.t('menu.impress'), I18n.t('paths.impressum') 
+      %li Copyright © 2016 Peter Kuchler III. All rights reserved.
+
+

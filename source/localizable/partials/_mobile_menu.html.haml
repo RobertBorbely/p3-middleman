@@ -1,0 +1,26 @@
+%nav.mobile-menu-content
+  .logo
+    =image_tag('Logo.png')
+  %ul
+    %li
+      = link_to I18n.t('menu.home'), '/'
+    %li
+      = link_to I18n.t('menu.about_me'), '/about'
+    %li
+      = link_to I18n.t('menu.gallery'), '/galleries', class: :featured
+    %li
+      %a{:href => "https://my.matterport.com/show/?m=U9jd9arkBRY", target: "_blank"} virtual gallery
+    %li
+      = link_to I18n.t('menu.contact_me'), '/contacts'
+  .menu-footer
+    .languages
+      = link_to 'EN', '/en'
+      = link_to 'DE', '/'
+    .socials
+      %i.fa.fa-facebook
+      %i.fa.fa-twitter
+      %i.fa.fa-instagram
+      %i.fa.fa-pinterest
+      
+.fade-screen
+

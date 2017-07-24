@@ -1,0 +1,99 @@
+@mixin main-title() {
+  font-size: $big-font-size;
+  font-weight: 600;
+  line-height: 1;
+}
+
+@mixin second-title() {
+  font-size: $medium-font-size;
+  font-weight: 500;
+  line-height: 1;
+}
+
+@mixin button() {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: $base-font-size;
+  color: white;
+  background-color: $action-color;
+  transition: all .3s $ease;
+
+  &:hover {
+    background-color: darken($action-color, 10);
+    color: white;
+  }
+}
+
+@mixin featured() {
+  color: $action-color;
+  transition: all .3s $ease;
+
+  &:hover {
+    color: darken($action-color, 10);
+  } 
+}
+
+main {
+  transition: all .3s $ease;
+  position: relative;
+  background: linear-gradient(0deg, rgba(255,255,255,1) -5%, rgba(32,32,32,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#202020', endColorstr='#ffffff',GradientType=0 );
+
+  &.menu-open {
+    transform: translateX(-220px);
+  }
+}
+
+a {
+  color: $action-color;
+  transition: all .3s $ease;
+
+  &:hover {
+    color: darken($action-color, 10);
+  }
+}
+
+hr {
+  width: 100px;
+  border: 2px solid white;
+  margin: 30px auto 50px auto;
+}
+
+input[type="text"].input-field, input[type="email"].input-field, textarea.input-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: solid 2px rgba(255,255,255, .7);
+  background: transparent;
+  color: white;
+  transition: all .3s ease-in-out;
+  border-radius: 0;
+  margin: 0 0 20px 0;
+  height: 41px;
+
+  &:focus {
+    border-color: rgba(255,255,255,1);
+  }
+}
+
+textarea.input-field {
+  min-height: 300px;
+}
+
+.category-title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.zoomContainer {
+  display: none;
+
+  @include media($medium-screen) {
+    display: block;
+  }
+}
+
+
+
+

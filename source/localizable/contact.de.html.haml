@@ -1,0 +1,14 @@
+.contact
+  %h1.page-main-title=  I18n.t('menu.contact_me')
+  %hr/
+
+  %p.contact-desc=I18n.t('contact_me.desc').html_safe
+
+  = form_tag '/mail' do 
+    - field_set_tag do
+      = text_field_tag :name, placeholder: I18n.t('placeholder.contact.name'), class: "input-field"
+      = text_field_tag :email, placeholder: I18n.t('placeholder.contact.email'), class: "input-field"
+      = text_field_tag :phone_number, placeholder: I18n.t('placeholder.contact.phone_number'), class: "input-field"
+      = text_area_tag :text, placeholder: I18n.t('placeholder.contact.text'), class: "input-field"
+      .actions
+        = submit_tag I18n.t('contact_me.submit_button'), class: 'gallery-btn'

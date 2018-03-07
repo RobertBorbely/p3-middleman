@@ -1,25 +1,25 @@
 %nav.mobile-menu-content
-    .logo
-      =image_tag('Logo.png')
-    %ul
-      %li
-        = link_to I18n.t('menu.home'), '/'
-      %li
-        = link_to I18n.t('menu.about_me'), "/#{I18n.t('paths.about')}"
-      %li
-        %a.featured{:href => "https://www.instagram.com/p3.glassart/", target: "_blank"} Gallery
-      %li
-        %a{:href => "https://my.matterport.com/show/?m=U9jd9arkBRY", target: "_blank"} virtual gallery
-    .menu-footer
-      .languages
-        = link_to 'EN', '/en'
-        = link_to 'DE', '/'
-      .socials
-        %i.fa.fa-facebook
-        %i.fa.fa-twitter
-        %i.fa.fa-instagram
-        %i.fa.fa-pinterest
-        
-  .fade-screen
+  .logo
+    =image_tag('Logo.png')
+  %ul
+    %li
+      = link_to I18n.t('menu.home'), '/'
+    %li
+      = link_to I18n.t('menu.about_me'), "/#{I18n.t('paths.about')}"
+    %li
+      %a.featured{:href => "https://www.instagram.com/p3.glassart/", target: "_blank"} Gallery
+    %li
+      %a{:href => "https://my.matterport.com/show/?m=U9jd9arkBRY", target: "_blank"} virtual gallery
+  .menu-footer
+    .languages
+      = link_to 'EN', '/en'
+      = link_to 'DE', '/'
+    .socials
+      %i.fa.fa-facebook
+      %i.fa.fa-twitter
+      %i.fa.fa-instagram
+      %i.fa.fa-pinterest
+      
+.fade-screen
   
   

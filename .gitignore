@@ -2,3 +2,4 @@
 .tmp
 /build
 .sass-cache
+.DS_STORE

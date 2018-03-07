@@ -5,13 +5,11 @@
     %li
       = link_to I18n.t('menu.home'), '/'
     %li
-      = link_to I18n.t('menu.about_me'), '/about'
+      = link_to I18n.t('menu.about_me'), "/#{I18n.t('paths.about')}"
     %li
-      = link_to I18n.t('menu.gallery'), '/galleries', class: :featured
+      %a.featured{:href => "https://www.instagram.com/p3.glassart/", target: "_blank"} Gallery
     %li
       %a{:href => "https://my.matterport.com/show/?m=U9jd9arkBRY", target: "_blank"} virtual gallery
-    %li
-      = link_to I18n.t('menu.contact_me'), '/contacts'
   .menu-footer
     .languages
       = link_to 'EN', '/en'

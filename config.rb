@@ -54,8 +54,8 @@ set :css_dir, "assets/stylesheets"
 set :images_dir, "assets/images"
 set :js_dir, "assets/javascripts"
 
-redirect "/en/gallery", to: "/en/gallery/light_object"
-redirect "/galerie", to: "/galerie/light_object"
+# redirect "/en/gallery", to: "/en/gallery/light_object"
+# redirect "/galerie", to: "/galerie/light_object"
 
 configure :build do
   activate :external_pipeline,

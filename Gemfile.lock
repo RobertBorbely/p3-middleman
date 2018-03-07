@@ -95,6 +95,8 @@ GEM
       servolux
       tilt (~> 2.0)
       uglifier (~> 3.0)
+    middleman-gh-pages (0.3.1)
+      rake (> 0.9.3)
     middleman-minify-html (3.4.1)
       htmlcompressor (~> 0.2.0)
       middleman-core (>= 3.2)
@@ -184,6 +186,7 @@ DEPENDENCIES
   haml_lint
   launchy (~> 2.4)
   middleman (~> 4.2)
+  middleman-gh-pages
   middleman-minify-html (~> 3.4)
   middleman-pagination!
   middleman-pry (~> 1.0)
@@ -193,4 +196,4 @@ DEPENDENCIES
   scss_lint
 
 BUNDLED WITH
-   1.15.1
+   1.16.1

@@ -14,7 +14,9 @@ var p = require('gulp-load-plugins')({ // This loads all the other plugins.
   rename: {
     'vinyl-source-stream': 'source',
     'vinyl-buffer': 'buffer',
-    'gulp-util': 'gutil'
+    'gulp-util': 'gutil',
+    'gulp-htmlmin': 'htmlmin',
+    'gulp-gzip': 'gzip'
   },
 });
 
@@ -117,17 +119,31 @@ gulp.task('sizereport', function () {
     }));
 });
 
+// HTML minify
+gulp.task('htmlmin', function() {
+  return gulp.src(dest + '**/*.html')
+    .pipe(p.htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest(build));
+});
+
+//Gzip
+gulp.task('gzip', function() {
+  gulp.src([dest + '**/*.html', dest + '**/*.css', dest + '**/*.js'])
+    .pipe(p.gzip({ append: true }))
+    .pipe(gulp.dest(build));
+});
+
 // Critical CSS for production 
 gulp.task('critical', function () {
-  return gulp.src(production() ? build + '**/*.html' : dest + '**/*.html')
+  return gulp.src(build + '**/*.html')
     .pipe(critical({
       inline: true,
-      base: production() ? build : dest,
-      css: 'build/assets/stylesheets/site.css',
-      minify: false
+      base: dest,
+      css: ['.tmp/assets/stylesheets/site.css'],
+      minify: true,
     }))
     .on('error', handleError)
-    .pipe(gulp.dest(production() ? build : dest));
+    .pipe(gulp.dest(dest));
 });
 
 // 4. SUPER TASKS
@@ -135,13 +151,17 @@ gulp.task('critical', function () {
 // Development Task
 gulp.task('development', function(done) {
   //p.runSequence('clean', 'css', 'js', 'images', done);
-  p.runSequence('clean', 'css', 'js', 'critical', done);
+  p.runSequence('clean', 'css', 'js', 'images', done);
 });
 
 // Production Task
 gulp.task('production', function(done) {
-  p.runSequence('clean', 'css', 'js', 'images', 'critical', 'sizereport', done);
+  p.runSequence('clean', 'css', 'js', 'images', done);
 });
+
+gulp.task('critical-min', function(done) {
+  p.runSequence('critical', 'htmlmin', 'gzip', 'sizereport', done);
+})
 
 // Default Task
 // This is the task that will be invoked by Middleman's exteranal pipeline when

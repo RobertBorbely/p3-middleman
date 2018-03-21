@@ -1,6 +1,10 @@
 activate :directory_indexes
 activate :i18n
 
+after_build do
+  system './node_modules/gulp/bin/gulp.js critical-min'
+end
+
 set :relative_links, true
 set :haml, { format: :html5 }
 
@@ -67,10 +71,10 @@ configure :build do
   ignore "assets/javascripts/all.js"
   ignore "assets/stylesheets/site"
 
-  activate :gzip
+  # activate :gzip
 
-  activate :minify_html do |html|
-    html.remove_quotes = false
-    html.remove_intertag_spaces = true
-  end
+  # activate :minify_html do |html|
+  #   html.remove_quotes = false
+  #   html.remove_intertag_spaces = true
+  # end
 end

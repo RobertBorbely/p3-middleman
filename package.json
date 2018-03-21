@@ -45,6 +45,8 @@
   },
   "dependencies": {
     "critical": "^1.2.0",
+    "gulp-gzip": "^1.4.2",
+    "gulp-htmlmin": "^4.0.0",
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "webfontloader": "^1.6.27"

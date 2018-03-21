@@ -138,9 +138,11 @@ gulp.task('critical', function () {
   return gulp.src(build + '**/*.html')
     .pipe(critical({
       inline: true,
-      base: dest,
-      css: ['.tmp/assets/stylesheets/site.css'],
+      base: build,
+      css: ['build/assets/stylesheets/site.css'],
       minify: true,
+      // inlineImages: true,
+      ignore: ['@import',/url\(/]
     }))
     .on('error', handleError)
     .pipe(gulp.dest(dest));

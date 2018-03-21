@@ -44,6 +44,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "critical": "^1.2.0",
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "webfontloader": "^1.6.27"

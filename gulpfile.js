@@ -7,6 +7,7 @@
 var gulp = require('gulp');
 var bourbon = require('bourbon').includePaths;
 var neat = require('bourbon-neat').includePaths;
+var critical = require('critical').stream;
 var p = require('gulp-load-plugins')({ // This loads all the other plugins.
   DEBUG: false,
   pattern: ['gulp-*', 'gulp.*', 'del', 'run-*', 'browser*', 'vinyl-*'],
@@ -22,6 +23,7 @@ var p = require('gulp-load-plugins')({ // This loads all the other plugins.
 var
   src  = 'source/', // The Middleman source folder
   dest = '.tmp/',   // The "hot" build folder used by Middleman's external pipeline
+  build = 'build/', // The build folder
 
   development = p.environments.development,
   production = p.environments.production,
@@ -115,17 +117,30 @@ gulp.task('sizereport', function () {
     }));
 });
 
+// Critical CSS for production 
+gulp.task('critical', function () {
+  return gulp.src(production() ? build + '**/*.html' : dest + '**/*.html')
+    .pipe(critical({
+      inline: true,
+      base: production() ? build : dest,
+      css: 'build/assets/stylesheets/site.css',
+      minify: false
+    }))
+    .on('error', handleError)
+    .pipe(gulp.dest(production() ? build : dest));
+});
+
 // 4. SUPER TASKS
 
 // Development Task
 gulp.task('development', function(done) {
   //p.runSequence('clean', 'css', 'js', 'images', done);
-  p.runSequence('clean', 'css', 'js', done);
+  p.runSequence('clean', 'css', 'js', 'critical', done);
 });
 
 // Production Task
 gulp.task('production', function(done) {
-  p.runSequence('clean', 'css', 'js', 'images', 'sizereport', done);
+  p.runSequence('clean', 'css', 'js', 'images', 'critical', 'sizereport', done);
 });
 
 // Default Task

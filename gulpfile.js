@@ -161,6 +161,7 @@ gulp.task('production', function(done) {
   p.runSequence('clean', 'css', 'js', 'images', done);
 });
 
+// Called by after-build hook
 gulp.task('critical-min', function(done) {
   p.runSequence('critical', 'htmlmin', 'gzip', 'sizereport', done);
 })

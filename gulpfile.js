@@ -142,7 +142,7 @@ gulp.task('critical', function () {
       css: ['build/assets/stylesheets/site.css'],
       minify: true,
       // inlineImages: true,
-      ignore: ['@import',/url\(/]
+      ignore: ['@import']
     }))
     .on('error', handleError)
     .pipe(gulp.dest(dest));

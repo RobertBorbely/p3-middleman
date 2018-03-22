@@ -77,6 +77,7 @@ gulp.task('css', function() {
     .pipe(p.sass(sassOpts).on('error', p.sass.logError))
     .pipe(p.autoprefixer(autoprefixerOpts)).on('error', handleError)
     .pipe(production(p.cleanCss()))
+    .pipe(production(p.rename('site.min.css')))
     .pipe(development(p.sourcemaps.write()))
     .pipe(gulp.dest(css.out));
 });
@@ -93,6 +94,7 @@ gulp.task('js', function() {
     .pipe(production() ? p.buffer() : p.gutil.noop())
     .pipe(production(p.stripDebug()))
     .pipe(production() ? p.uglify(uglifyOpts) : p.gutil.noop())
+    .pipe(production(p.rename('bundle.min.js')))
     .pipe(gulp.dest(js.out));
 });
 
@@ -139,7 +141,7 @@ gulp.task('critical', function () {
     .pipe(critical({
       inline: true,
       base: build,
-      css: ['build/assets/stylesheets/site.css'],
+      css: ['build/assets/stylesheets/site.min.css'],
       minify: true,
       // inlineImages: true,
       ignore: ['@import']
@@ -164,10 +166,10 @@ gulp.task('production', function(done) {
 // Called by after-build hook
 gulp.task('critical-min', function(done) {
   p.runSequence('critical', 'htmlmin', 'gzip', 'sizereport', done);
-})
+});
 
 // Default Task
-// This is the task that will be invoked by Middleman's exteranal pipeline when
+// This is the task that will be invoked by Middleman's external pipeline when
 // running 'middleman server'
 gulp.task('default', ['development'], function() {
 

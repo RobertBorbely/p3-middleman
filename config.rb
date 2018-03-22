@@ -2,16 +2,16 @@ activate :directory_indexes
 activate :i18n
 
 after_build do
-  system './node_modules/gulp/bin/gulp.js critical-min'
+  system "./node_modules/gulp/bin/gulp.js critical-min"
 end
 
 set :relative_links, true
-set :haml, { format: :html5 }
+set :haml, format: :html5
 
 activate :pagination do
   # Remember: you need to add manually the gallerries because
   # data in here is not present only in the pageable_set!!!
-  ['fusion_light', 'light_object', 'light_phoenix', 'light_sphere'].each do |item|
+  %w[fusion_light light_object light_phoenix light_sphere].each do |item|
     pageable_set :"#{item}_gallery_photos" do
       data.send("#{item}_gallery.photos")
     end
@@ -21,8 +21,8 @@ end
 # Disable Haml warnings
 Haml::TempleEngine.disable_option_validator!
 
-page "/", layout: 'landing'
-page "/en/", layout: 'landing'
+page "/", layout: "landing"
+page "/en/", layout: "landing"
 
 # data.site.galleries.each do |gallery|
 #  I18n.locale = :en
